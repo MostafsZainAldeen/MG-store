@@ -1,0 +1,87 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Cormorant Garamond', 'Times New Roman', serif;
+    --font-ar: 'Tajawal', ui-sans-serif, system-ui, sans-serif;
+
+    --color-mg-black: #0a0a0a;
+    --color-mg-charcoal: #141414;
+    --color-mg-muted: #a3a3a3;
+    --color-mg-gold: #c9a962;
+    --color-mg-gold-soft: #e8d9a8;
+    --color-mg-cream: #f7f5f0;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply bg-[var(--color-mg-black)] text-[var(--color-mg-cream)] antialiased;
+    }
+
+    .font-ar {
+        font-family: var(--font-ar);
+    }
+
+    .font-en {
+        font-family: var(--font-sans);
+    }
+
+    .font-display {
+        font-family: var(--font-display);
+    }
+}
+
+@layer components {
+    .mg-container {
+        @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+    }
+
+    .mg-btn {
+        @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium tracking-wide transition-all duration-300;
+    }
+
+    .mg-btn-primary {
+        @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium tracking-wide transition-all duration-300 bg-[var(--color-mg-gold)] text-black hover:bg-[var(--color-mg-gold-soft)];
+    }
+
+    .mg-btn-outline {
+        @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium tracking-wide transition-all duration-300 border border-white/15 bg-transparent text-[var(--color-mg-cream)] hover:border-[var(--color-mg-gold)] hover:text-[var(--color-mg-gold)];
+    }
+
+    .mg-card {
+        @apply overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-sm transition-transform duration-500 hover:-translate-y-1 hover:border-[var(--color-mg-gold)]/35;
+    }
+
+    .mg-input {
+        @apply w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white outline-none ring-0 transition focus:border-[var(--color-mg-gold)]/60;
+    }
+
+    /*
+     * Native <select> lists often use a light background; text-white on the control
+     * makes options appear white-on-white. Force dark options + color-scheme.
+     */
+    select.mg-input {
+        color-scheme: dark;
+        color: var(--color-mg-cream);
+        background-color: rgb(255 255 255 / 0.06);
+    }
+
+    select.mg-input option,
+    select.mg-input optgroup {
+        background-color: var(--color-mg-charcoal);
+        color: var(--color-mg-cream);
+    }
+
+    .mg-label {
+        @apply mb-2 block text-xs font-medium uppercase tracking-[0.2em] text-[var(--color-mg-muted)];
+    }
+}
