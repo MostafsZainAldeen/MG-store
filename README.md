@@ -54,6 +54,13 @@ In order to ensure that the Laravel community is welcoming to all, please review
 
 If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
+## MG Store: uploads & images
+
+Uploaded files (products, logos, settings) are stored under `storage/app/public` and exposed via `public/storage`.
+
+- After deploy or clone, run: `php artisan storage:link` so `public/storage` points at `storage/app/public`. Without this link, product images show as broken in the browser.
+- `APP_URL` in `.env` should match the URL you use in the browser (including `http`/`https` and port). The app also aligns generated URLs with each request so local mismatches (e.g. `localhost` vs `127.0.0.1`) are less likely to break `/storage/...` links.
+
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
