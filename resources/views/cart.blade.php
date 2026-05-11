@@ -57,17 +57,17 @@
                 <div class="mt-12 max-w-md rounded-3xl border border-white/10 bg-black/30 p-8">
                     <div class="flex justify-between text-sm text-white/70">
                         <span>{{ __('store.cart.subtotal') }}</span>
-                        <span>{{ number_format($subtotal, 2) }} {{ $currencyCode ?? 'SAR' }}</span>
+                        <span>{{ number_format($subtotal, 2) }} {{ $currencyCode ?? 'ILS' }}</span>
                     </div>
                     @if (($discount ?? 0) > 0)
                         <div class="mt-3 flex justify-between text-sm text-emerald-300">
                             <span>{{ __('store.cart.discount') }}</span>
-                            <span>- {{ number_format($discount, 2) }} {{ $currencyCode ?? 'SAR' }}</span>
+                            <span>- {{ number_format($discount, 2) }} {{ $currencyCode ?? 'ILS' }}</span>
                         </div>
                     @endif
                     <div class="mt-6 flex justify-between border-t border-white/10 pt-6 text-lg text-white">
                         <span>{{ __('store.cart.total') }}</span>
-                        <span>{{ number_format($total, 2) }} {{ $currencyCode ?? 'SAR' }}</span>
+                        <span>{{ number_format($total, 2) }} {{ $currencyCode ?? 'ILS' }}</span>
                     </div>
                     <div class="mt-8 flex flex-col gap-3 sm:flex-row">
                         <a class="mg-btn-primary flex-1 text-center" href="{{ route('checkout.index') }}">{{ __('store.checkout.title') }}</a>

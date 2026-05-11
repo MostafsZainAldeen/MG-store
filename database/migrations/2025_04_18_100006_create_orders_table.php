@@ -21,7 +21,7 @@ return new class extends Migration
             $table->decimal('subtotal', 12, 2);
             $table->decimal('discount_amount', 12, 2)->default(0);
             $table->decimal('total', 12, 2);
-            $table->string('currency', 8)->default('SAR');
+            $table->string('currency', 8)->default('ILS');
             $table->foreignId('coupon_id')->nullable()->constrained()->nullOnDelete();
             $table->timestamps();
         });

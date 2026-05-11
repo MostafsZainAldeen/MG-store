@@ -28,7 +28,7 @@ class CheckoutController extends Controller
             return redirect()->route('cart.index')->with('error', __('store.cart.empty'));
         }
 
-        $currency = (string) Setting::get('currency_code', 'SAR');
+        $currency = (string) Setting::get('currency_code', 'ILS');
         $lines = collect($totals['lines'])->map(function (array $line) {
             return [
                 'name' => $line['product']->localizedName(),
@@ -50,7 +50,7 @@ class CheckoutController extends Controller
             return redirect()->route('cart.index')->with('error', __('store.cart.empty'));
         }
 
-        $currency = (string) Setting::get('currency_code', 'SAR');
+        $currency = (string) Setting::get('currency_code', 'ILS');
 
         try {
             $order = DB::transaction(function () use ($request, $totals, $currency) {

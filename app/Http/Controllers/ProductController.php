@@ -31,7 +31,7 @@ class ProductController extends Controller
             ->take(8)
             ->get();
 
-        $currency = (string) Setting::get('currency_code', 'SAR');
+        $currency = (string) Setting::get('currency_code', 'ILS');
         $lines = [[
             'name' => $product->localizedName(),
             'quantity' => 1,

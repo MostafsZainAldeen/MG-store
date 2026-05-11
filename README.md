@@ -58,8 +58,10 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 Uploaded files (products, logos, settings) are stored under `storage/app/public` and exposed via `public/storage`.
 
-- After deploy or clone, run: `php artisan storage:link` so `public/storage` points at `storage/app/public`. Without this link, product images show as broken in the browser.
-- `APP_URL` in `.env` should match the URL you use in the browser (including `http`/`https` and port). The app also aligns generated URLs with each request so local mismatches (e.g. `localhost` vs `127.0.0.1`) are less likely to break `/storage/...` links.
+- After deploy or clone, run: `php artisan storage:link` so `public/storage` points at `storage/app/public`. **Without this symlink, product and logo images appear broken** (empty box / broken icon) because the browser requests `/storage/...` and gets 404.
+- The `storage/app/public` folder (e.g. `products/`, `brands/`) is usually **not** in Git. Copy it from your old server or re-upload images from the admin after deploy.
+- Ensure the web server user can read files under `storage/` and `bootstrap/cache/` (typical: `chmod -R ug+rwX storage bootstrap/cache` on Linux).
+- `APP_URL` in `.env` must match the site URL (scheme + host). Wrong `APP_URL` can break generated asset URLs in some setups.
 
 ## License
 

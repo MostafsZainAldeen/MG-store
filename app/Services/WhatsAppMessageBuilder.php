@@ -24,7 +24,7 @@ class WhatsAppMessageBuilder
     /** @param list<array{name: string, quantity: int, line_total: float}> $lines */
     public function cartMessage(?string $customerName, array $lines, float $total, ?string $currency, ?string $address = null, ?string $notes = null): string
     {
-        $currency = $currency ?? (string) Setting::get('currency_code', 'SAR');
+        $currency = $currency ?? (string) Setting::get('currency_code', 'ILS');
         $locale = app()->getLocale();
         $linesText = collect($lines)->map(function (array $line) use ($locale, $currency) {
             return ($locale === 'ar' ? '• ' : '- ').$line['name'].' × '.$line['quantity'].' — '.$line['line_total'].' '.$currency;

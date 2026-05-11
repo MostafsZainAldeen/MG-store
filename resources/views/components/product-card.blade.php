@@ -21,7 +21,7 @@
             <p class="text-[11px] uppercase tracking-[0.3em] text-[var(--color-mg-muted)]">{{ $product->brand?->localizedName() }}</p>
             <h3 class="font-display text-xl text-white">{{ $product->localizedName() }}</h3>
             <div class="flex items-baseline gap-3">
-                <span class="text-[var(--color-mg-gold)]">{{ number_format($product->currentPrice(), 2) }} {{ $currencyCode ?? 'SAR' }}</span>
+                <span class="text-[var(--color-mg-gold)]">{{ number_format($product->currentPrice(), 2) }} {{ $currencyCode ?? 'ILS' }}</span>
                 @if ($product->hasDiscount())
                     <span class="text-sm text-white/35 line-through">{{ number_format((float) $product->price, 2) }}</span>
                 @endif

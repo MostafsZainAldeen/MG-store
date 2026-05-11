@@ -124,7 +124,7 @@ return [
         'rights' => 'All rights reserved.',
         'follow' => 'Follow us',
     ],
-    'currency' => 'SAR',
+    'currency' => 'ILS',
     'newsletter_thanks' => 'Thanks for subscribing.',
     'review_thanks' => 'Thanks for your review — it will appear after approval.',
     'stock_issue' => 'We could not complete your order due to stock availability. Please refresh your cart.',

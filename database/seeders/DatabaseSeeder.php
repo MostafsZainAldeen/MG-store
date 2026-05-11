@@ -28,8 +28,8 @@ class DatabaseSeeder extends Seeder
         Setting::set('address_ar', 'الرياض، المملكة العربية السعودية');
         Setting::set('address_en', 'Riyadh, Saudi Arabia');
         Setting::set('social_instagram', 'https://instagram.com');
-        Setting::set('currency_code', 'SAR');
-        Setting::set('currency_symbol', 'ر.س');
+        Setting::set('currency_code', 'ILS');
+        Setting::set('currency_symbol', '₪');
         Setting::set('meta_title', 'MG Store');
         Setting::set('meta_description_ar', 'متجر فاخر: ساعات وشنط وإكسسوارات ومحافظ من ماركات عالمية.');
         Setting::set('meta_description_en', 'Luxury boutique: watches, bags, accessories, and wallets from world-class brands.');

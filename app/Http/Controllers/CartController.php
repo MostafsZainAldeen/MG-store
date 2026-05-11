@@ -28,7 +28,7 @@ class CartController extends Controller
                     'line_total' => $line['line_total'],
                 ];
             })->all();
-            $currency = (string) \App\Models\Setting::get('currency_code', 'SAR');
+            $currency = (string) \App\Models\Setting::get('currency_code', 'ILS');
             $waMessage = $this->whatsapp->cartMessage(null, $lines, $totals['total'], $currency);
         }
         $whatsappUrl = $waMessage !== '' ? $this->whatsapp->urlFromText($waMessage) : $this->whatsapp->urlFromText(__('store.nav.cart'));
